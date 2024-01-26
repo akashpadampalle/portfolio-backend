@@ -12,9 +12,9 @@ const corsOptions: CorsOptions = {
 
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
 
 app.get('/', async (_: Request, res: Response) => {
     const responses = await Contact.find({});
