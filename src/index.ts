@@ -2,17 +2,17 @@ import "./config/environment";
 import express, { Request, Response } from "express";
 import "./config/db";
 import Contact from "./schema/Contact";
-import cors,{ CorsOptions } from "cors";
+import cors from "cors";
 const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
-const corsOptions: CorsOptions = {
-    origin: "https://akash-padampalle-portfolio.vercel.app",
-    methods: "POST",
-}
+// const corsOptions: CorsOptions = {
+//     origin: "https://akash-padampalle-portfolio.vercel.app",
+//     methods: "POST",
+// }
 
 const app = express();
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
